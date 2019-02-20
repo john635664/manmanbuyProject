@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>品牌商品大全</title>
+    <title>商城导航</title>
     <!-- 引入网站图标 -->
-    <link rel="icon" href="../images/favicon.ico">
+    <link rel="icon" href="./images/favicon.ico">
     <!-- 引入字体图标 -->
     <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
     <!-- 引入mui.css -->
@@ -15,40 +15,32 @@
     <!-- 引入公共less文件 -->
     <!-- <link rel="stylesheet/less" href="../css/base.less"> -->
     <!-- 引入当前页面的less文件 -->
-    <link rel="stylesheet/less" href="../css/brandTitle.less">
+    <link rel="stylesheet/less" href="../css/shopGuide.less">
     <!-- 引入编译less文件的less.js -->
     <script src="../lib/less/less.js"></script>
 </head>
 
 <body>
-    <!-- 1,网站头部 -->
-    <header id="header">
-        <!-- 顶部边栏 -->
-        <div class="top" id="top"><a href="#" class="logo"><img src="../images/header_logo.png" alt=""></a><a href="#"
-                class="download"><img src="../images/header_app.png" alt=""></a> </div>
-        <!-- 搜索栏 -->
-        <div class="xy-search"><input type="text" class="searchBox " placeholder="请输入你想比价的商品"><button type="button"
-                class="btn-search">搜索</button></div>
+    <!-- 头部模块 -->
+    <header id="xy-header">
+        <a href="../index.html">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <h4>商城导航</h4>
+        <a href="#">
+            <img src="https://img.alicdn.com/imgextra/i2/690311/TB2beKvaTXYBeNkHFrdXXciuVXa_!!690311.png" alt="手机app下载">
+        </a>
     </header>
     <!-- 主体模块 -->
     <main id="xy-main">
-        <div class="xy-title">
-            <a href="index.html">首页</a>&nbsp;>
-            <a href="#">品牌大全</a>
-        </div>
-        <div class="xy-content">
-            <div class="xy-con-title">
-                热门品牌排行
-            </div>
-            <div class="xy-con-list">
-                <ul>
-                    <li>平板电视十大品牌<i class="fa fa-angle-down "></i></li>
-                </ul>
-            </div>
-        </div>
-
+        <ul class="clearfloat">
+            <li>
+                <img src="" alt="">
+                <span></span>
+            </li>
+        </ul>
     </main>
-    <!-- 底部模块 -->
+    <!-- 6,网站底部 -->
     <footer id="xy-footer">
         <div class="function">
             <a href="#" class="login">登录</a>
@@ -65,9 +57,24 @@
 
 </html>
 <script id="brandListTpl" type="text/html">
-    {{each result value index}}
-        <li data-id="{{value.brandTitleId}}" data-title="{{value.brandTitle}}">{{value.brandTitle}}<i class="fa fa-angle-down "></i></li>
-    {{/each}}
+        {{each result value index}}
+            <li>
+                <a href="{{value.navHref}}">
+                        <img src="{{value.navImg}}" alt="">
+                        <span>{{value.navTitle}}</span>
+                </a>
+                
+            </li>
+        {{/each}}
+        {{each result value index}}
+            <li>
+                <a href="{{value.navHref}}">
+                        <img src="{{value.navImg}}" alt="">
+                        <span>{{value.navTitle}}</span>
+                </a>
+                
+            </li>
+        {{/each}}
 </script>
 <!-- 引入zepto.js -->
 <script src="../lib/zepto/zepto.min.js"></script>
@@ -76,6 +83,6 @@
 <!-- 引入artTemplate.js -->
 <script src="../lib/artTemplate/template-web.js"></script>
 <!-- 引入brandTitle.js -->
-<script src="../js/brandTitle.js"></script>
+<script src="../js/shopGuide.js"></script>
 <!-- 引入jquery-3.1.1.min.js -->
 <script src="../lib/jquery/jquery-3.1.1.min.js"></script>

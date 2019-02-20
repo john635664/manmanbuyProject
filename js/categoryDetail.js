@@ -37,7 +37,7 @@ $(function () {
                totalPage = Math.ceil(obj.totalCount/obj.pagesize);
                var optionList ="";
                for(let i=1;i<=totalPage;i++){
-                   var option = "<option class='option'  value="+i+">"+
+                   var option = "<option class='option' style='width:10px'  value="+i+">"+
                    "<span class='spanFirst'>"+i+"</span> / <span>"+totalPage+"</span>"+
                    " </option>";
                    optionList += option;
@@ -68,14 +68,19 @@ $(function () {
 
     $('.lastPage').on('tap',function(e){
         e.preventDefault();
-        pageid--;
-        if (pageid > 0) {
+        page--;
+        if (page > 0) {
             render();
         } else {
-            pageid = page;
+            page = totalPage;
             render();
             
         }
+    })
+
+    $('.back').on('tap',function (e) {
+        e.preventDefault();
+        mui('.mui-scroll-wrapper').scroll().scrollTo(0,0,1000);
     })
     
     
